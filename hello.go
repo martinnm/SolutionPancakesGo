@@ -1,6 +1,7 @@
 package main
 
-import ("fmt")
+import ("fmt"
+)
 
 func main() {
 
@@ -11,10 +12,9 @@ func main() {
 
     max := getMax(pancakes)
     counter := make([]int, max+1)
-    fmt.Println(len(counter))
+
 
     for j:=0; j < len(pancakes); j++{
-      fmt.Println("index", pancakes[j])
       counter[pancakes[j]]++
     }
     moves:=max;
@@ -33,11 +33,21 @@ func main() {
 }
 
 func readCases() int {
-  return 1
+  var i int
+  fmt.Scanln(&i)
+  return i
 }
 
 func readPancakes() []int{
-  return []int{5, 5, 5, 5, 9, 9}
+  var j int
+  fmt.Scanln(&j)
+  pancakesarray := make([]int, j)
+  for a := 0; a < j; a++{
+  var m int
+  fmt.Scan(&m)
+  pancakesarray[a] = m
+  }
+  return pancakesarray
 }
 
 func getMax(pancakes []int) int {
